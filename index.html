@@ -3,39 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>AstroCalculator</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div id="loading">Carregando...</div>
+    <canvas id="bg-canvas"></canvas>
+    
     <div class="calculator">
-        <input type="text" class="display" id="display" readonly>
+        <h1 style="color: white; text-align: center; margin-bottom: 20px; font-size: 24px;">Astro Calculator</h1>
+        <input type="text" class="display" id="display" readonly placeholder="0">
         <div class="buttons">
-            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="clear" onclick="clearDisplay()"><i class="fas fa-trash"></i></button>
             <button onclick="appendToDisplay('(')">(</button>
             <button onclick="appendToDisplay(')')">)</button>
-            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <button class="operator" onclick="appendToDisplay('/')"><i class="fas fa-divide"></i></button>
             
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
             <button onclick="appendToDisplay('9')">9</button>
-            <button class="operator" onclick="appendToDisplay('*')">×</button>
+            <button class="operator" onclick="appendToDisplay('*')"><i class="fas fa-times"></i></button>
             
             <button onclick="appendToDisplay('4')">4</button>
             <button onclick="appendToDisplay('5')">5</button>
             <button onclick="appendToDisplay('6')">6</button>
-            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button class="operator" onclick="appendToDisplay('-')"><i class="fas fa-minus"></i></button>
             
             <button onclick="appendToDisplay('1')">1</button>
             <button onclick="appendToDisplay('2')">2</button>
             <button onclick="appendToDisplay('3')">3</button>
-            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="operator" onclick="appendToDisplay('+')"><i class="fas fa-plus"></i></button>
             
             <button onclick="appendToDisplay('0')">0</button>
             <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="deleteLastChar()">⌫</button>
-            <button class="equals" onclick="calculate()">=</button>
+            <button onclick="deleteLastChar()"><i class="fas fa-backspace"></i></button>
+            <button class="equals" onclick="calculate()"><i class="fas fa-equals"></i></button>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Desenvolvido por <span class="author">Wesley de Albuquerque Filgueiras</span></p>
+            <div class="social-links">
+                <a href="https://github.com/wesleyyach" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/wesley-albuquerque-7272892b7/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:wesleyyach@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="js/background.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
