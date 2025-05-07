@@ -10,6 +10,25 @@ Thumbs.db
 
 # Dependências
 node_modules/
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos de build
+dist/
+build/
+
+# Arquivos temporários
+*.tmp
+*.temp
+
 venv/
 __pycache__/
 *.pyc 
